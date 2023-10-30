@@ -1,0 +1,74 @@
+Encriptacion y desencriptacion: Proyecto/Vectores/Texto.txt, 1000 ciclos
+Chacha20 
+	 Encriptacion:0.0021119117736816406 
+	 Desencriptacion:0.018102407455444336
+AES_ECB 
+	 Encriptacion:0 
+	 Desencriptacion:0
+AES_CBC 
+	 Encriptacion:0 
+	 Desencriptacion:0
+
+Encriptacion y desencriptacion: Proyecto/Vectores/Requerimiento.pdf, 1000 ciclos
+Chacha20 
+	 Encriptacion:1.0270333290100098 
+	 Desencriptacion:1.1632308959960938
+AES_ECB 
+	 Encriptacion:0 
+	 Desencriptacion:0
+AES_CBC 
+	 Encriptacion:0 
+	 Desencriptacion:0
+
+Encriptacion y desencriptacion: Proyecto/Vectores/Imagen.jpeg, 1000 ciclos
+Chacha20 
+	 Encriptacion:0.23421907424926758 
+	 Desencriptacion:0.2714567184448242
+AES_ECB 
+	 Encriptacion:0 
+	 Desencriptacion:0
+AES_CBC 
+	 Encriptacion:0 
+	 Desencriptacion:0
+
+Encriptacion y desencriptacion: Proyecto/Vectores/Texto.txt, 1000 ciclos, con RSA_OAEP
+RSA_OAEP 
+	 Encriptacion:1.181380271911621 
+	 Desencriptacion:9.51677942276001
+
+Hashing: 1000 ciclos
+SHA-2 
+	 Tiempo:1 archivo .txt
+	 Tiempo:1 archivo .pdf
+	 Tiempo:1 archivo .jpeg
+SHA-3 
+	 Tiempo:2 archivo .txt
+	 Tiempo:2 archivo .pdf
+	 Tiempo:2 archivo .jpeg
+Scrypt 
+	 Tiempo:3 archivo .txt
+	 Tiempo:3 archivo .pdf
+	 Tiempo:3 archivo .jpeg
+
+Signing: 1000 ciclos
+RSA-PSS 
+	 Tiempo:4 archivo .txt
+	 Tiempo:4 archivo .pdf
+	 Tiempo:4 archivo .jpeg
+ECDSA P-521 
+	 Tiempo:5 archivo .txt
+	 Tiempo:5 archivo .pdf
+	 Tiempo:5 archivo .jpeg
+EdDSA C25519 
+	 Tiempo:6 archivo .txt
+	 Tiempo:6 archivo .pdf
+	 Tiempo:6 archivo .jpeg
+
+Hashing contrasena: Hola mundo
+SHA-2 
+	 Tiempo:1
+SHA-3 
+	 Tiempo:2
+Scrypt 
+	 Tiempo:3
+
