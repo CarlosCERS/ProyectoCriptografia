@@ -4,28 +4,51 @@ import hashlib
 from base64 import b64encode
 from Crypto.Cipher import ChaCha20
 
-plaintext = b'Hola mindo'
-key= b'Soy una llave secreta'
+def cifrarTest(plainText, secret):
+    cipher = ChaCha20.new(key=secret.digest())
+    ciphertext = cipher.encrypt(plainText)
+    print("Plain text:\t",plainText)
+    print("Key used:\t",b64encode(secret.digest()))
+    return cipher, ciphertext
 
-print("Plain text:\t",plaintext)
-print("Secret key:\t",key)
+def descifrarTest(secret, ciphertext, cipher):
+    cipher = ChaCha20.new(key=secret.digest(), nonce=cipher.nonce)
+    plaintext = cipher.decrypt(ciphertext)
+    print("Decrypted:\t",plaintext)
 
-secret = hashlib.sha256()
+if __name__ == "__main__":
+    plaintext = b'Hola mundo'
+    key= b'Soy una llave secreta'
+    secret = hashlib.sha256()
+    secret.update(key)
+    cipher, ciphertext = cifrarTest(plaintext,secret)
+    descifrarTest(secret,ciphertext, cipher)
 
-secret.update(key)
+########################################3
 
-print("Key used:\t",b64encode(secret.digest()))
 
-cipher = ChaCha20.new(key=secret.digest())
-ciphertext = cipher.encrypt(plaintext)
+# plaintext = b'Hola mindo'
+# key= b'Soy una llave secreta'
 
-nonce = b64encode(cipher.nonce).decode('utf-8')
-ct = b64encode(ciphertext).decode('utf-8')
-print("\n---ChaCha20 Encrypt")
-print(" Nonce:",nonce)
-print(" Cipher:",ct)
+# print("Plain text:\t",plaintext)
+# print("Secret key:\t",key)
 
-print("\n---ChaCha20 Decrypt")
-cipher = ChaCha20.new(key=secret.digest(), nonce=cipher.nonce)
-plaintext = cipher.decrypt(ciphertext)
-print(" Decrypted:\t",plaintext)
+# secret = hashlib.sha256()
+
+# secret.update(key)
+
+# print("Key used:\t",b64encode(secret.digest()))
+
+# cipher = ChaCha20.new(key=secret.digest())
+# ciphertext = cipher.encrypt(plaintext)
+
+# nonce = b64encode(cipher.nonce).decode('utf-8')
+# ct = b64encode(ciphertext).decode('utf-8')
+# print("\n---ChaCha20 Encrypt")
+# print(" Nonce:",nonce)
+# print(" Cipher:",ct)
+
+# print("\n---ChaCha20 Decrypt")
+# cipher = ChaCha20.new(key=secret.digest(), nonce=cipher.nonce)
+# plaintext = cipher.decrypt(ciphertext)
+# print(" Decrypted:\t",plaintext)
