@@ -146,7 +146,6 @@ titulos.append('SHA-3')
 
 # Scrypt
 # Llamada a la función
-tiemposContrasena.append(0)
 titulos.append('Scrypt')
 Contraseña = scrypt.Generador(Key)
 tiemposContrasena.append(Contraseña)
