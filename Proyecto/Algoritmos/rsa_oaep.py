@@ -4,7 +4,7 @@ import time
 
 # Genera las llaves
 def GenerarLlaves():
-    llavePrivada = RSA.generate(3072)
+    llavePrivada = RSA.generate(2048)
     llavePublica = llavePrivada.publickey()
     return llavePrivada,llavePublica
 
