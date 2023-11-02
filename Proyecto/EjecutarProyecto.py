@@ -82,10 +82,6 @@ for archivo in Vectores:
     time_sha3 = sha3_512.hashing3_archivo(archivo, Ciclos)
     tiemposHashing.append(time_sha3)
 
-    # Scrypt
-    # Llamada a la función
-    tiemposHashing.append(0)
-
 # Escribir resultados en archivo.
 Resultado.write(f'Hashing: {Ciclos} ciclos\n')
 for i in range(len(titulos)):
