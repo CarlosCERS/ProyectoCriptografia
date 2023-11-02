@@ -46,7 +46,7 @@ SHA-3
 	 Tiempo:0 archivo .pdf
 	 Tiempo:0 archivo .jpeg
 
-Firma y verificación: Proyecto/Vectores/Texto.txt, 1000 ciclos
+Firma y verificaciï¿½n: Proyecto/Vectores/Texto.txt, 1000 ciclos
 RSA-PSS 
 	 Firma:7.146737337112427 
 	 Verificacion:1.183072566986084
@@ -57,7 +57,7 @@ ED25519
 	 Firma:6 
 	 Verificacion:6
 
-Firma y verificación: Proyecto/Vectores/Requerimiento.pdf, 1000 ciclos
+Firma y verificaciï¿½n: Proyecto/Vectores/Requerimiento.pdf, 1000 ciclos
 RSA-PSS 
 	 Firma:10.218029737472534 
 	 Verificacion:4.362169981002808
@@ -68,7 +68,7 @@ ED25519
 	 Firma:6 
 	 Verificacion:6
 
-Firma y verificación: Proyecto/Vectores/Imagen.jpeg, 1000 ciclos
+Firma y verificaciï¿½n: Proyecto/Vectores/Imagen.jpeg, 1000 ciclos
 RSA-PSS 
 	 Firma:17.127471446990967 
 	 Verificacion:4.256037473678589

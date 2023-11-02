@@ -5,6 +5,8 @@ from Algoritmos import aes_gcm
 from Algoritmos import rsa_oaep
 from Algoritmos import rsa_pss
 from Algoritmos import scrypt
+from Algoritmos import sha2_512
+from Algoritmos import sha3_512
 from Herramientas import Graficar
 
 with open("Proyecto/Claves.json","r") as f:
@@ -72,10 +74,16 @@ for archivo in Vectores:
     print(f"Procesando Hashing de {archivo}")
     # SHA-2
     # Llamada de la función.
-    tiemposHashing.append(0)
+    time_sha2 = sha2_512.hashing2_archivo(archivo, Ciclos)
+    tiemposHashing.append(time_sha2)
 
     # SHA 3
     # Llamada de la función.
+    time_sha3 = sha3_512.hashing3_archivo(archivo, Ciclos)
+    tiemposHashing.append(time_sha3)
+
+    # Scrypt
+    # Llamada a la función
     tiemposHashing.append(0)
 
 # Escribir resultados en archivo.
@@ -130,16 +138,19 @@ print(f"Procesando Hashing para {Key}")
 
 # SHA-2
 # Llamada a la función
+time_sha2_pass = sha2_512.hashing2_pass(Key, Ciclos)
+tiemposContrasena.append(time_sha2_pass)
 titulos.append('SHA-2')
-tiemposContrasena.append(0)
 
 # SHA-3
 # Llamada a la función
+time_sha3_pass = sha3_512.hashing3_pass(Key, Ciclos)
+tiemposContrasena.append(time_sha3_pass)
 titulos.append('SHA-3')
-tiemposContrasena.append(0)
 
 # Scrypt
 # Llamada a la función
+tiemposContrasena.append(0)
 titulos.append('Scrypt')
 Contraseña = scrypt.Generador(Key)
 tiemposContrasena.append(Contraseña)
