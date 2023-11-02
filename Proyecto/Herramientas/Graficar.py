@@ -51,6 +51,58 @@ def GraficarEncriptadoDesencriptado(archivo, titulos, tiemposCifrado, tiemposDes
         fig.suptitle(f'Gráficas de tiempo de ejecución de algorítmos de encriptación y desencriptación: {ciclos} ciclos para: {file_name}', fontsize=16)
         plt.show()
 
+
+def GraficarFirmaVerificacion(archivo, titulos, tiemposFirma, tiemposVerificado, ciclos):
+
+    # Colores.
+    colors = ['purple', 'yellow', 'blue', 'green', 'red', 'orange']
+
+    # Tamaño o número de gráficas a crear.
+    tamanio = len(titulos)
+
+    # Obtener el nombre del archivo.
+    file_name = os.path.basename(archivo)
+
+    if(tamanio>1):
+        # Declaramos el número de barras a crear.
+        fig, ax = plt.subplots(1, tamanio, figsize=(25, 5), sharey=True)
+
+        for i in range(tamanio):
+            # Graficar tiempos de encriptación
+            ax[i].bar(0, tiemposFirma[i], color=colors[i])
+
+            # Graficar tiempos de desencriptación
+            ax[i].bar(1, tiemposVerificado[i], color=colors[i])
+
+            ax[i].set_xticks([0, 1])
+            ax[i].set_xticklabels(["Firma", "Verificacion"])
+            ax[i].set_title(f'{titulos[i]}')
+
+        ax[0].set_ylabel("Tiempo promedio (s)")
+        # Título
+        fig.suptitle(f'Gráficas de tiempo de ejecución de algorítmos de firma y verificación: {ciclos} ciclos para: {file_name}', fontsize=16)
+        plt.show()
+    else:
+        # Declaramos el número de barras a crear.
+        fig, ax = plt.subplots(1, tamanio, figsize=(15, 5), sharey=True)
+
+        # Graficar tiempos de encriptación
+        ax.bar(0, tiemposFirma[0], color=colors[0])
+
+        # Graficar tiempos de desencriptación
+        ax.bar(1, tiemposVerificado[0], color=colors[0])
+
+        ax.set_xticks([0, 1])
+        ax.set_xticklabels(["Firma", "Verificación"])
+        ax.set_title(f'{titulos[0]}')
+
+        ax.set_ylabel("Tiempo promedio (s)")
+        # Título
+        fig.suptitle(f'Gráficas de tiempo de ejecución de algorítmos de firma t verificación: {ciclos} ciclos para: {file_name}', fontsize=16)
+        plt.show()
+
+
+
 # Grafica las comparaciones de un solo sentido para distintos archivos.
 def GraficarComparacionUnSentido(titulos, tiempos, accion):
     # Colores de las barras

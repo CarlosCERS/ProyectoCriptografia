@@ -1,6 +1,8 @@
 import json
 from Algoritmos import chacha20
 from Algoritmos import rsa_oaep
+from Algoritmos import rsa_pss
+from Algoritmos import scrypt
 from Herramientas import Graficar
 
 with open("Proyecto/Claves.json","r") as f:
@@ -48,6 +50,7 @@ print(f"Procesando encriptación y desencriptación de Proyecto/Vectores/Texto.t
 titulos=[]
 tiemposEncriptacion=[]
 tiemposDesencriptacion=[]
+
 titulos.append('RSA_OAEP')
 Encriptado, Desencriptado =  rsa_oaep.calcularTiempo("Proyecto/Vectores/Texto.txt",Ciclos)
 tiemposEncriptacion.append(Encriptado)
@@ -58,24 +61,20 @@ for i in range(len(titulos)):
     Resultado.write(f'{titulos[i]} \n\t Encriptacion:{tiemposEncriptacion[i]} \n\t Desencriptacion:{tiemposDesencriptacion[i]}\n')
 Resultado.write('\n')
 # Graficar.
-Graficar.GraficarEncriptadoDesencriptado(archivo,titulos,tiemposEncriptacion,tiemposDesencriptacion,Ciclos)
+Graficar.GraficarEncriptadoDesencriptado('texto.txt',titulos,tiemposEncriptacion,tiemposDesencriptacion,Ciclos)
 
 ################# Hashing ######################
-titulos=['SHA-2','SHA-3','Scrypt']
+titulos=['SHA-2','SHA-3']
 tiemposHashing=[]
 for archivo in Vectores:
     print(f"Procesando Hashing de {archivo}")
     # SHA-2
     # Llamada de la función.
-    tiemposHashing.append(1)
+    tiemposHashing.append(0)
 
     # SHA 3
     # Llamada de la función.
-    tiemposHashing.append(2)
-
-    # Scrypt
-    # Llamada a la función
-    tiemposHashing.append(3)
+    tiemposHashing.append(0)
 
 # Escribir resultados en archivo.
 Resultado.write(f'Hashing: {Ciclos} ciclos\n')
@@ -88,32 +87,39 @@ Resultado.write('\n')
 Graficar.GraficarComparacionUnSentido(titulos,tiemposHashing, 'Hashing')
     
 ################# Signing ######################
-titulos=['RSA-PSS','ECDSA P-521', 'EdDSA C25519']
-tiemposFirma=[]
+Vectores = ["Proyecto/Vectores/Texto.txt","Proyecto/Vectores/Requerimiento.pdf","Proyecto/Vectores/Imagen.jpeg"]
 for archivo in Vectores:
-    print(f"Procesando Signing de {archivo}")
+    titulos=[]
+    tiemposFirma=[]
+    tiemposVerificacion=[]  
+    print(f"Procesando encriptación y desencriptación de {archivo}")
 
     # RSA-PSS
     # Llamada de la función.
-    tiemposFirma.append(4)
+    titulos.append('RSA-PSS')
+    Firma, Verificacion = rsa_pss.calcularTiempo(archivo, Ciclos)
+    tiemposVerificacion.append(Verificacion)
+    tiemposFirma.append(Firma)
 
     # ECDSA P521
     # Llamada de la función.
+    titulos.append('ECDSA-P521')
+    tiemposVerificacion.append(5)
     tiemposFirma.append(5)
 
     # ED25519
     # Llamada de la función.
+    titulos.append('ED25519')
+    tiemposVerificacion.append(6)
     tiemposFirma.append(6)
 
+    Resultado.write(f'Firma y verificación: {archivo}, {Ciclos} ciclos\n')
+    for i in range(len(titulos)):
+        Resultado.write(f'{titulos[i]} \n\t Firma:{tiemposFirma[i]} \n\t Verificacion:{tiemposVerificacion[i]}\n')
+    Resultado.write('\n')
+    # Graficar.
+    Graficar.GraficarFirmaVerificacion(archivo,titulos,tiemposFirma,tiemposVerificacion,Ciclos)
 
-Resultado.write(f'Signing: {Ciclos} ciclos\n')
-for i in range(len(titulos)):
-    Resultado.write(f'{titulos[i]} \n\t Tiempo:{tiemposFirma[i]} archivo .txt\n')
-    Resultado.write(f'\t Tiempo:{tiemposFirma[i+(1*len(titulos))]} archivo .pdf\n')
-    Resultado.write(f'\t Tiempo:{tiemposFirma[i+(2*len(titulos))]} archivo .jpeg\n')
-Resultado.write('\n')
-# Imprimir resultados
-Graficar.GraficarComparacionUnSentido(titulos,tiemposFirma, 'Signing')
 
 ################# Encriptacion contraseña ######################
 tiemposContrasena=[]
@@ -122,18 +128,19 @@ print(f"Procesando Hashing para {Key}")
 
 # SHA-2
 # Llamada a la función
-tiemposContrasena.append(1)
 titulos.append('SHA-2')
+tiemposContrasena.append(0)
 
 # SHA-3
 # Llamada a la función
-tiemposContrasena.append(2)
 titulos.append('SHA-3')
+tiemposContrasena.append(0)
 
 # Scrypt
 # Llamada a la función
-tiemposContrasena.append(3)
 titulos.append('Scrypt')
+Contraseña = scrypt.Generador(Key)
+tiemposContrasena.append(Contraseña)
 
 # Imprimir resultados
 Resultado.write(f'Hashing contrasena: {Key}\n')

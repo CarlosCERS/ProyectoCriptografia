@@ -29,7 +29,7 @@ if __name__ == "__main__":
 
     totalEncriptacion=0
     totalDesencriptacion=0
-    for i in range(1,1+1):
+    for i in range(1,1+1): 
         # Ejemplo de uso
         llavePrivada, llavePublica = GenerarLlaves(3072)
         # Cifrado
