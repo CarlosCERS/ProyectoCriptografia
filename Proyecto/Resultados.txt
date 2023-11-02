@@ -1,40 +1,40 @@
 Encriptacion y desencriptacion: Proyecto/Vectores/Texto.txt, 1000 ciclos
 Chacha20 
-	 Encriptacion:0.015963077545166016 
-	 Desencriptacion:0.009014368057250977
+	 Encriptacion:0.036106109619140625 
+	 Desencriptacion:0.026209354400634766
 AES_ECB 
-	 Encriptacion:0 
-	 Desencriptacion:0
-AES_CBC 
-	 Encriptacion:0 
-	 Desencriptacion:0
+	 Encriptacion:0.039749860763549805 
+	 Desencriptacion:0.04375267028808594
+AES_GCM 
+	 Encriptacion:0.13249468803405762 
+	 Desencriptacion:0.13044071197509766
 
 Encriptacion y desencriptacion: Proyecto/Vectores/Requerimiento.pdf, 1000 ciclos
 Chacha20 
-	 Encriptacion:1.1208007335662842 
-	 Desencriptacion:1.1265769004821777
+	 Encriptacion:1.9123146533966064 
+	 Desencriptacion:1.832777976989746
 AES_ECB 
-	 Encriptacion:0 
-	 Desencriptacion:0
-AES_CBC 
-	 Encriptacion:0 
-	 Desencriptacion:0
+	 Encriptacion:0.25040459632873535 
+	 Desencriptacion:0.24770784378051758
+AES_GCM 
+	 Encriptacion:0.700049877166748 
+	 Desencriptacion:0.6762020587921143
 
 Encriptacion y desencriptacion: Proyecto/Vectores/Imagen.jpeg, 1000 ciclos
 Chacha20 
-	 Encriptacion:0.30116772651672363 
-	 Desencriptacion:0.25546979904174805
+	 Encriptacion:0.5451278686523438 
+	 Desencriptacion:0.581000804901123
 AES_ECB 
-	 Encriptacion:0 
-	 Desencriptacion:0
-AES_CBC 
-	 Encriptacion:0 
-	 Desencriptacion:0
+	 Encriptacion:0.09744572639465332 
+	 Desencriptacion:0.10159730911254883
+AES_GCM 
+	 Encriptacion:0.2480182647705078 
+	 Desencriptacion:0.2607691287994385
 
 Encriptacion y desencriptacion: Proyecto/Vectores/Texto.txt, 1000 ciclos, con RSA_OAEP
 RSA_OAEP 
-	 Encriptacion:1.4528396129608154 
-	 Desencriptacion:10.733834743499756
+	 Encriptacion:1.353684902191162 
+	 Desencriptacion:7.269006013870239
 
 Hashing: 1000 ciclos
 SHA-2 
@@ -48,8 +48,8 @@ SHA-3
 
 Firma y verificación: Proyecto/Vectores/Texto.txt, 1000 ciclos
 RSA-PSS 
-	 Firma:4.108043670654297 
-	 Verificacion:0.7264573574066162
+	 Firma:7.146737337112427 
+	 Verificacion:1.183072566986084
 ECDSA-P521 
 	 Firma:5 
 	 Verificacion:5
@@ -59,8 +59,8 @@ ED25519
 
 Firma y verificación: Proyecto/Vectores/Requerimiento.pdf, 1000 ciclos
 RSA-PSS 
-	 Firma:6.1462929248809814 
-	 Verificacion:2.6511647701263428
+	 Firma:10.218029737472534 
+	 Verificacion:4.362169981002808
 ECDSA-P521 
 	 Firma:5 
 	 Verificacion:5
@@ -70,8 +70,8 @@ ED25519
 
 Firma y verificación: Proyecto/Vectores/Imagen.jpeg, 1000 ciclos
 RSA-PSS 
-	 Firma:4.815598249435425 
-	 Verificacion:1.230076551437378
+	 Firma:17.127471446990967 
+	 Verificacion:4.256037473678589
 ECDSA-P521 
 	 Firma:5 
 	 Verificacion:5
@@ -85,5 +85,5 @@ SHA-2
 SHA-3 
 	 Tiempo:0
 Scrypt 
-	 Tiempo:0.05489850044250488
+	 Tiempo:0.11408019065856934
 
