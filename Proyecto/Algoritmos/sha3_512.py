@@ -36,7 +36,7 @@ def hash3_pass(contrasena):
 def hashing3_archivo(archivo, ciclos):
     """Obtiene el tiempo promedio de ejecución de cada algoritmo de hash usando una muestra de 1000 iteraciones"""
     time_sha3_512 = 0
-
+    #Realizamos las iteraciones de las muestra representativa
     for _ in range(ciclos):
         time_sha3_512 += hash3_archivo(archivo)
  
@@ -45,7 +45,7 @@ def hashing3_archivo(archivo, ciclos):
 def hashing3_pass(password, ciclos):
 
     time_sha3_512 = 0
-
+    #Realizamos las iteraciones de las muestra representativa
     for _ in range(ciclos):
         time_sha3_512 += hash3_pass(password)
         
