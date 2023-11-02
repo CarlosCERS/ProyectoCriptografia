@@ -92,7 +92,7 @@ for archivo in Vectores:
     titulos=[]
     tiemposFirma=[]
     tiemposVerificacion=[]  
-    print(f"Procesando encriptación y desencriptación de {archivo}")
+    print(f"Procesando firma y verificación de {archivo}")
 
     # RSA-PSS
     # Llamada de la función.
