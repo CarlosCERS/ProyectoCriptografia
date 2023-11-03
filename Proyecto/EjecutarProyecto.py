@@ -7,6 +7,8 @@ from Algoritmos import rsa_pss
 from Algoritmos import scrypt
 from Algoritmos import sha2_512
 from Algoritmos import sha3_512
+from Algoritmos import ECDSA_512
+from Algoritmos import EdDSA_32
 from Herramientas import Graficar
 
 with open("Proyecto/Claves.json","r") as f:
@@ -110,14 +112,16 @@ for archivo in Vectores:
     # ECDSA P521
     # Llamada de la función.
     titulos.append('ECDSA-P521')
-    tiemposVerificacion.append(5)
-    tiemposFirma.append(5)
+    Firma1, Verificacion1 = ECDSA_512.calcularTiempo(archivo, Ciclos)
+    tiemposVerificacion.append(Verificacion1)
+    tiemposFirma.append(Firma1)
 
     # ED25519
     # Llamada de la función.
     titulos.append('ED25519')
-    tiemposVerificacion.append(6)
-    tiemposFirma.append(6)
+    Firma2, Verificacion2 = EdDSA_32.calcularTiempo(archivo, Ciclos)
+    tiemposVerificacion.append(Firma2)
+    tiemposFirma.append(Verificacion2)
 
     Resultado.write(f'Firma y verificación: {archivo}, {Ciclos} ciclos\n')
     for i in range(len(titulos)):
