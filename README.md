@@ -1,6 +1,6 @@
 # Pimer proyecto de criptografia
 
-En este proyecto se pondrán a pruebas distintos algoritmos de criptografía vistos en las clases de Criptografía de la <b>Facultad de Ingeniería</b> de la <b>Universidad Nacional Autónoma de México</b>, además de tenerlos de distintos tamaños de llaves, los cuales son:
+Este proyecto está diseñado para poner a prueba distintos algoritmos de criptografía vistos en las clases de Criptografía de la <b>Facultad de Ingeniería</b> de la <b>Universidad Nacional Autónoma de México</b>, los cuales se van a comparar sus tiempos de ejecución con distintos tipos de archivos, desde .txt hasta .jpeg, por lo cual para la verácidad de esto, se usarán los mismos datos de entradas para todos los algoritmos, como las llaves o contraseñas que se usarán, como los ciclos que se repetirán  en estos. Para este proyecto se probrarán los siguientes algoritmos:
 <ul>
   <li><b>Chacha20</b> - Llave de 256 bits</li>
   <li><b>AES-EBC</b> - Llave de 256 bits</li>
@@ -14,8 +14,23 @@ En este proyecto se pondrán a pruebas distintos algoritmos de criptografía vis
   <li><b>EdDSA</b> - Curva 25519</li>
 </ul>
 
-Este proyecto tomará los datos que el usuario ingresará <i>cosa que se explicará más adelante</i> y los procesará de distintas formas con todos los algoritmos, repitiendo este proceso de acuerdo al número de ciclos que el propio usuario definió antes y despues de ello, se graficarán los resultados mostrándose al usuario quien al cerrar uno, se ejecutará y mostrará el siguiente, dejando al final un resumen a detalle de los resultados de toda la ejecución anotados en un archivo .txt llamado "Resultados.txt".
+Este proyecto tomará los datos que el usuario ingresará <i>cosa que se explicará más adelante</i> y los procesará para todos los algoritmos, repitiendo este proceso de acuerdo al número de ciclos que el propio usuario definió antes; se graficarán los resultados de las pruebas al usuario en distintas etapas, que al cerrarse uno, se ejecutará y mostrará la siguiente parte de la ejecución, dejando al final un resumen a detalle de los resultados de toda la ejecución anotados en un archivo .txt llamado "Resultados.txt".
 Debido a que cada algoritmo tiene su propio objetivo y funcionamiento, en este proyecto se ejecutarán en distintos grupos de algorítmos de acuerdo a su función y con los datos asignados.
+
+## Partes de la ejecución
+<ul>
+  <li>
+    <b>Cifrado y Descifrado:</b> En esta etapa se pondrán a comparación la velocidad con la encriptan y desencriptan distintos formtatos de datos, como lo son los archivos .txt, una imágen .jpeg y un documento .pdf, con los algoritmos <i>Chacha20, AES_ECB y AES_GMC</i>.
+    <ul>
+      <li><b>RSA_OAEP:</b> Este cuarto algoritmo de encriptación y desencriptación, también tendría que estar en este grupo pero, debido al gran tiempo que tarda en hacer sus labores comparados con los otros 3, en la gráfica terminaría opacando al resto, por lo que este se ejecutará separademente del resto.</li>
+    </ul>
+  </li>
+  <li><b>Hashing:</b> En este proceso se probará la velocidad de hashing de los algoritmos de encriptación <i>SHA-2 y SHA.-3</i>, probandolos con los mismos archivos .txt, .pdf y .jpeg</li>
+  <li><b>Firmado y verificación:</b> En esta parte, se medirá el tiempo con el que tardan en firmar un archivo .txt, .pdf y .jpeg los algorítmos <i>RSA-PSS, ECDSA-P521 y ED25519</i>.</li>
+  <ul>
+    <li><b>Hashing de contraseña:</b> En este apartado especial se pondran a prueba la velocidad con la que se aplica hash a una contraseña de los algoritmos <i>SHA-2 y SHA-3</i> en contra del algoritmo  <i>Scrypt</i>.</li>    
+  </ul>
+</ul>
 
 ## Requerimientos
 <ul>
@@ -23,7 +38,7 @@ Debido a que cada algoritmo tiene su propio objetivo y funcionamiento, en este p
 </ul>
 
 ## Uso
-Para hacer uso del programa, primero se tiene que saber que se divide entre dos carpetas, la de <b>Proyecto</b> y la de <b>Pruevas</b>. Mientras que en la primera carpeta se encuentra el proyecto final que se entrega, mientras que en la segunda se encuentran todos los archivos que usamos para experimentos de algoritmos o funciones antes de ingresarlos al proyecto principal.
+Para hacer uso del programa, primero se tiene que saber que se divide entre dos carpetas, la de <b>Proyecto</b> y la de <b>Pruevas</b>. Mientras que en la primera carpeta se encuentra el proyecto final que se entrega, en la segunda se encuentran todos los archivos que usamos para experimentos de algoritmos o funciones antes de ingresarlos al proyecto principal.
 En la carpeta de <b>Proyecto</b> se encuentran los archivos más importantes:
 <ul>
   <li>main.py: Es el archivo dónde se instalan las librerías necesarias para la ejecución del proyecto antes de arrancar el mismo proyecto.</li>
@@ -40,4 +55,4 @@ En la carpeta de <b>Proyecto</b> se encuentran los archivos más importantes:
 
 Para ejecutar el proyecto, dentro de la carpeta principal del repositorio (dónde solo se puedan observar las carpetas Proyecto y Pruebas, en terminal ejecute el siguiente código:
 <code>py Proyecto/main.py </code>
-Con todo esto poco a poco irán apareciendo gráficas comparando distintos tiempos de ejecución de distintos algoritmos de encriptación, los cuales tendrá que cerrar para poder avanzar a la siguiente parte del proyecto.
+Con todo esto poco a poco van a ir apareciendo las gráficas comparando distintos tiempos de ejecución de distintos algoritmos de encriptación, los cuales tendrá que cerrar para poder avanzar a la siguiente parte del proyecto. Una vez terminado de ejecutar todos los algoritmos y visto todas las gráficas, toda la información recolectada se guardarán en <i>Texto.txt</i> para que usted a detalle pueda analizarlo después.
