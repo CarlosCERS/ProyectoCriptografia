@@ -35,6 +35,10 @@ Debido a que cada algoritmo tiene su propio objetivo y funcionamiento, en este p
 ## Requerimientos
 <ul>
   <li>Python 3.9 o superior</li>
+  <li>pycryptodome</li>
+  <li>matplotlib</li>
+  <li>ecdsa</li>
+  <li>cryptography</li>
 </ul>
 
 ## Uso
@@ -53,6 +57,18 @@ En la carpeta de <b>Proyecto</b> se encuentran los archivos más importantes:
   </li>
 </ul>
 
+### Si usa Windows
 Para ejecutar el proyecto, dentro de la carpeta principal del repositorio (dónde solo se puedan observar las carpetas Proyecto y Pruebas, en terminal ejecute el siguiente código:
+</br>
 <code>py Proyecto/main.py </code>
+</br>
 Con todo esto poco a poco van a ir apareciendo las gráficas comparando distintos tiempos de ejecución de distintos algoritmos de encriptación, los cuales tendrá que cerrar para poder avanzar a la siguiente parte del proyecto. Una vez terminado de ejecutar todos los algoritmos y visto todas las gráficas, toda la información recolectada se guardarán en <i>Texto.txt</i> para que usted a detalle pueda analizarlo después.
+
+### Si usa Linux
+Debido a que algunas cosas no se podrán hacer de manera automática, se tendrán que hacer de manera manual, por lo que primero se tenrá que instalar las librerias manualmente ejecutando desde dentro de la carpeta principal del repositorio (dónde solo se puedan observar las carpetas Proyecto y Pruebas, en terminal ejecute el siguiente código:
+</br>
+<code>pip install -r Proyecto/requirements.txt</code>
+</br>
+Una vez terminado de instalar las liberrias necesarias, desde la misma localización, ejecutar el siguiente código para iniciar el programa:
+</br>
+<code>python3 Proyecto/EjecutarProyecto.py</code>
