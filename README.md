@@ -46,7 +46,7 @@ En la carpeta de <b>Proyecto</b> se encuentran los archivos más importantes:
     EjecutarProyecto.py: En este archivo se hacen llamadas a todos los algoritmos para su ejecución y análisis.
   </li>
   <li>
-    Clajes.json: Este es el archivo más importantes para el usuario, ya que dentro de este sencillo archivo podrá modificar alguno valores como la clave que se usarán en distintos algorítmos o el número de ciclos que desee ejecutar en todos los algorítmos, todo esto sin necesidad de modificar directamente el código fuente y que todo esto sea uniforme para todo el proyecto.
+    Claves.json: Este es el archivo más importantes para el usuario, ya que dentro de este sencillo archivo podrá modificar alguno valores como la clave que se usarán en distintos algorítmos o el número de ciclos que desee ejecutar en todos los algorítmos, todo esto sin necesidad de modificar directamente el código fuente y que todo esto sea uniforme para todo el proyecto.
   </li>
   <li>
     Texto.txt: Este arhivo si no lo encuentra, se creará al momento de hacer la primera ejecución, y tiene como objetivo el ser una manera alterna de visualizar los resultados más allá de las gráficas porque estas no son del todo claras con valores obtenidos.
