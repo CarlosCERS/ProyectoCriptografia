@@ -1,0 +1,2 @@
+Para conocer como manejar este programa y su funcionamiento, favor de visitar el siguiente enace para más instrucciones:
+https://github.com/CarlosCERS/ProyectoCriptografia
