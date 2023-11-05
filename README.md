@@ -38,7 +38,7 @@ Debido a que cada algoritmo tiene su propio objetivo y funcionamiento, en este p
 </ul>
 
 ## Uso
-Para hacer uso del programa, primero se tiene que saber que se divide entre dos carpetas, la de <b>Proyecto</b> y la de <b>Pruevas</b>. Mientras que en la primera carpeta se encuentra el proyecto final que se entrega, en la segunda se encuentran todos los archivos que usamos para experimentos de algoritmos o funciones antes de ingresarlos al proyecto principal.
+Para hacer uso del programa, primero se tiene que saber que se divide entre dos carpetas, la de <b>Proyecto</b> y la de <b>Pruebas</b>. Mientras que en la primera carpeta se encuentra el proyecto final que se entrega, en la segunda se encuentran todos los archivos que usamos para experimentos de algoritmos o funciones antes de ingresarlos al proyecto principal.
 En la carpeta de <b>Proyecto</b> se encuentran los archivos más importantes:
 <ul>
   <li>main.py: Es el archivo dónde se instalan las librerías necesarias para la ejecución del proyecto antes de arrancar el mismo proyecto.</li>
