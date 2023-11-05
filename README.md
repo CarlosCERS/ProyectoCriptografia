@@ -66,4 +66,4 @@ Con todo esto poco a poco van a ir apareciendo las gráficas comparando distinto
 Debido a que algunas cosas no se podrán hacer de manera automática, se tendrán que hacer de manera manual, por lo que primero se tenrá que instalar las librerias manualmente ejecutando desde dentro de la carpeta principal del repositorio (dónde solo se puedan observar las carpetas Proyecto y Pruebas, en terminal ejecute el siguiente código:
 <code>pip install -r Proyecto/requirements.txt</code>
 Una vez terminado de instalar las liberrias necesarias, desde la misma localización, ejecutar el siguiente código para iniciar el programa:
-<code>py .\Proyecto\EjecutarProyecto.py</code>
+<code>py Proyecto/EjecutarProyecto.py</code>
