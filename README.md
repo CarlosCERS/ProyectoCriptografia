@@ -34,7 +34,7 @@ Debido a que cada algoritmo tiene su propio objetivo y funcionamiento, en este p
 
 ## Requerimientos
 <ul>
-  <li>Python 3.11 o superior</li>
+  <li>Python 3.9 o superior</li>
 </ul>
 
 ## Uso
