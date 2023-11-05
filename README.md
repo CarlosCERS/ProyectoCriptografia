@@ -71,4 +71,4 @@ Debido a que algunas cosas no se podrán hacer de manera automática, se tendrá
 </br>
 Una vez terminado de instalar las liberrias necesarias, desde la misma localización, ejecutar el siguiente código para iniciar el programa:
 </br>
-<code>py Proyecto/EjecutarProyecto.py</code>
+<code>python3 Proyecto/EjecutarProyecto.py</code>
