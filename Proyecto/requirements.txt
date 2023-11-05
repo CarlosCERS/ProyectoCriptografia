@@ -1,0 +1,4 @@
+pycryptodome
+matplotlib
+ecdsa
+cryptography
